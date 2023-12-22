@@ -1,7 +1,7 @@
 import json
 import getpass
 
-from utils.encrypt import *
+# from utils.encrypt import *
 
 # Function to save credentials
 def save_credentials(username, password):

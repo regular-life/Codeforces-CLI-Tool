@@ -1,4 +1,4 @@
-from utils.compilerToCode import *
+from compilerToCode import *
 
 def getCompiler(questionID, i):
     compile = questionID[i + 1:]

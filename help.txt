@@ -4,7 +4,7 @@ Options:
     --submit        Run cftool for submitting your code.
     --status        Display the most recent submission status and details.
     --my-stats      Display statistics such as your rating, the number of problems you've solved, and a comparison of problems solved versus rating for your ID.
-    --my-contest    View information related to the five most recent contests and your performance in these contests.
+    --my-contests   View information related to the five most recent contests and your performance in these contests.
     --credentials   Manage cftool credentials.
     --config        View and make changes to the configuration settings for cftool.
     --blogs         View the most recent blogs from Codeforces.

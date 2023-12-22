@@ -1,4 +1,4 @@
-from utils.getCompiler import *
+from getCompiler import *
 
 def getQuestionID(pathToCode):
     n = len(pathToCode)

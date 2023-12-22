@@ -2,7 +2,7 @@ import requests
 from datetime import datetime
 import pytz
 import tzlocal
-from utils.credentials import load_credentials
+from credentials import load_credentials
 
 def get_user_title(username):
     user_info_url = f"https://codeforces.com/api/user.info?handles={username}"

@@ -1,11 +1,15 @@
 #!/bin/bash
 
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
 if [ $# -eq 0 ]; then
     echo "Usage: $0 [--submit | --credentials | --config | --help]"
     exit 1
 fi
 
 option=$1
+
+cd "$SCRIPT_DIR"
 
 if [ $option == "--submit" ]; then
     source .env/bin/activate
@@ -15,11 +19,11 @@ elif [ $option == "--status" ]; then
     source .env/bin/activate
     python utils/getSubmissionStatusDetails.py
     deactivate
-elif [ $option == "my-stats" ]; then
+elif [ $option == "--my-stats" ]; then
     source .env/bin/activate
     python options/getMyStats.py
     deactivate
-elif [ $option == "--my-contest" ]; then
+elif [ $option == "--my-contests" ]; then
     source .env/bin/activate
     python options/getMyContests.py
     deactivate
@@ -36,10 +40,10 @@ elif [ $option == "--blogs" ]; then
     python options/getBlogs.py
     deactivate
 elif [ $option == "--help" ]; then
-    source .env/bin/activate
-    echo help.txt
-    deactivate
+    cat help.txt
 else
     echo "Invalid option. Usage: cftool [--submit | --status | --my-stats | --my-contest | --credentials | --config | --blogs | --help]"
     exit 1
 fi
+
+cd -
