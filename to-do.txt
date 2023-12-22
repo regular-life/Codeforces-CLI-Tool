@@ -1,0 +1,7 @@
+- encrypt the username and password file (optional); try using encrypt.py if possible
+
+- integrate with terminal
+
+- can add submission options for other websites like AtCoder, etc (that's why CF was made as class)
+
+- may need file reorganization (unlikely)

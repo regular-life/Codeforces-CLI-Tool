@@ -1,0 +1,30 @@
+#!/bin/bash
+
+if [ $# -eq 0 ]; then
+    echo "Usage: $0 [--submit | --credentials | --config | --help]"
+    exit 1
+fi
+
+option=$1
+
+if [ $option == "--submit" ]; then
+    # enable virtual environment
+    source .env/bin/activate
+    python Main.py
+    deactivate
+elif [ $option == "--credentials" ]; then
+    source .env/bin/activate
+    python utils/credentials.py
+    deactivate
+elif [ $option == "--config" ]; then
+    source .env/bin/activate
+    python config/config_interpreter.py
+    deactivate
+elif [ $option == "--help" ]; then
+    source .env/bin/activate
+    echo program_structure.txt
+    deactivate
+else
+    echo "Invalid option. Usage: $0 [--submit | --credentials | --config | --help]"
+    exit 1
+fi

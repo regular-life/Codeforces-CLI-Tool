@@ -1,0 +1,21 @@
+how-to-run:
+    Main.py is the Main running code: use this to write code for commands etc
+    helper functions in utils
+    class CF in classes
+    read config/config.yml else, you may get error
+    compiler to submit on is auto selected (read from the file extension being submitted)
+
+how-it-works:
+    username, password are saved locally in secrets/credentials.json
+    config/config.yml has an option whether the browser should be displayed or not
+    code first asks for file path to submit on
+    then asks for username, password if they are not saved
+    if config/config.yml has been set to true, code is submitted directly and result displayed on terminal
+    else user is prompted to type question id
+    code is submitted, and then after some time result is displayed along with submission time
+
+behind-the-scenes:
+    use virtual environment already set up using "source /.env/bin/activate"
+    authentication, submission is done using Selenium
+    submission status is fetched using CodeForces API
+    encrypt.py has not been used, i am receiving lots of errors when using it

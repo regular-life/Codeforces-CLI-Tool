@@ -1,0 +1,15 @@
+file_named_by_question_ID: true
+# for question 1900A, the file name is 1900A.cpp or some other compiler
+
+# if you want to use the question ID as the file name, set this to true
+# otherwise, set this as false
+
+# default: true
+
+headless_browser: false
+# whether you want to see the browser or not
+
+# if you want to use headless browser, set this to true. this will be faster, but you won't be able to see the browser and what's going on there. tought if there is an issue which only appears on the screen, and not reflected on terminl
+# otherwise, set this as false
+
+# default: false (for testing); set this as true later
