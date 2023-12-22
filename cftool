@@ -17,11 +17,11 @@ elif [ $option == "--status" ]; then
     deactivate
 elif [ $option == "my-stats" ]; then
     source .env/bin/activate
-    python utils/getMyStats.py
+    python options/getMyStats.py
     deactivate
 elif [ $option == "--my-contest" ]; then
     source .env/bin/activate
-    python utils/getMyContests.py
+    python options/getMyContests.py
     deactivate
 elif [ $option == "--credentials" ]; then
     source .env/bin/activate
@@ -33,13 +33,13 @@ elif [ $option == "--config" ]; then
     deactivate
 elif [ $option == "--blogs" ]; then
     source .env/bin/activate
-    python utils/getBlogs.py
+    python options/getBlogs.py
     deactivate
 elif [ $option == "--help" ]; then
     source .env/bin/activate
     echo help.txt
     deactivate
 else
-    echo "Invalid option. Usage: $0 [--submit | --credentials | --config | --help]"
+    echo "Invalid option. Usage: cftool [--submit | --status | --my-stats | --my-contest | --credentials | --config | --blogs | --help]"
     exit 1
 fi
