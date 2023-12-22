@@ -8,9 +8,20 @@ fi
 option=$1
 
 if [ $option == "--submit" ]; then
-    # enable virtual environment
     source .env/bin/activate
     python Main.py
+    deactivate
+elif [ $option == "--status" ]; then
+    source .env/bin/activate
+    python utils/getSubmissionStatusDetails.py
+    deactivate
+elif [ $option == "my-stats" ]; then
+    source .env/bin/activate
+    python utils/getMyStats.py
+    deactivate
+elif [ $option == "--my-contest" ]; then
+    source .env/bin/activate
+    python utils/getMyContests.py
     deactivate
 elif [ $option == "--credentials" ]; then
     source .env/bin/activate
@@ -20,9 +31,13 @@ elif [ $option == "--config" ]; then
     source .env/bin/activate
     python config/config_interpreter.py
     deactivate
+elif [ $option == "--blogs" ]; then
+    source .env/bin/activate
+    python utils/getBlogs.py
+    deactivate
 elif [ $option == "--help" ]; then
     source .env/bin/activate
-    echo program_structure.txt
+    echo help.txt
     deactivate
 else
     echo "Invalid option. Usage: $0 [--submit | --credentials | --config | --help]"

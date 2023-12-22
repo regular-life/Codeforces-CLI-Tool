@@ -2,6 +2,44 @@ import requests
 from datetime import datetime
 import pytz
 import tzlocal
+from utils.credentials import load_credentials
+
+def get_user_title(username):
+    user_info_url = f"https://codeforces.com/api/user.info?handles={username}"
+    response = requests.get(user_info_url)
+    
+    if response.status_code == 200:
+        user_info = response.json()
+        if user_info['status'] == 'OK':
+            return user_info['result'][0].get('rank', 'Unknown')
+    
+    return 'Unknown'
+
+def get_user_color(title):
+    # Map Codeforces titles to colors
+    title_colors = {
+        # grey
+        'newbie': '\033[37m',
+        # green
+        'pupil': '\033[32m',
+        # cyan
+        'specialist': '\033[36m',
+        # blue
+        'expert': '\033[34m',
+        # violet
+        'candidate master': '\033[35m',
+        # orange
+        'master': '\033[33m',
+        # orange
+        'international master': '\033[33m',
+        # red
+        'grandmaster': '\033[31m',
+        # red
+        'international grandmaster': '\033[31m',
+        # red
+        'legendary grandmaster': '\033[31m'
+    }
+    return title_colors.get(title.lower(), '\033[0m')  # Default to reset color
 
 def getSubmissionStatusDetails(username):
     while True:
@@ -29,8 +67,36 @@ def getSubmissionStatusDetails(username):
                 submission_time_local = submission_time_utc.replace(tzinfo=pytz.utc).astimezone(local_timezone)
                 submission_time_str = submission_time_local.strftime('%Y-%m-%d %H:%M:%S %Z')
                 
+                # Fetch user title and corresponding color
+                user_title = get_user_title(username)
+                user_color = get_user_color(user_title)
+                
+                # return this same sequence: # 	When 	Who 	Problem 	Lang 	Verdict 	Time 	Memory
+                # under '#' we have a clickable link to submission, with overlaying text as submission id
+                # under 'When' we have submission time
+                # under 'Who' we have username with color based on title
+                # under 'Problem' we have problem name
+                # under 'Lang' we have language
+                # under 'Verdict' we have verdict
+                # under 'Time' we have time taken for code to run
+                # under 'Memory' we have memory taken by code
+                
+                problem_contest_id = result['problem']['contestId']
+                problem_index = result['problem']['index']
+                problem_name = result['problem']['name']
+                language = result['programmingLanguage']
+                time_taken = result['timeConsumedMillis']
+                memory_taken = result['memoryConsumedBytes']
+                submission_id = result['id']
+                submission_link = f"\033]8;;{f'https://codeforces.com/contest/{problem_contest_id}/submission/{submission_id}'}\033\\{submission_id}\033]8;;\033\\"
+                
                 if (verdict != "TESTING"):
-                    return f"{status} submitted at {submission_time_str}"
+                    headers = "#            When                    Who          Problem                          Lang       Verdict     Time     Memory"
+                    separator = "-----------------------------------------------------------------------------------------------------------------------"
+                    return f"{headers}\n{separator}\n{submission_link}   {submission_time_str}   {user_color}{username}\033[0m   {problem_contest_id}-{problem_index}:{problem_name}   {language}   {status}   {time_taken}ms   {memory_taken}B"
 
 if __name__ == "__main__":
-    print(getSubmissionStatusDetails("nobody_alt"))
+    try:
+        print(getSubmissionStatusDetails(load_credentials()[0]))
+    except:
+        print(f"\033[31mError\033[0m: Please enter your Codeforces username and password using \033[32mcftool --credentials\033[0m")
