@@ -96,10 +96,9 @@ Ensure you have the required packages installed and add the project directory to
 
 We are actively working on improving cftool. Future features may include:
 
-- Enhanced contest analytics.
-- Integrated code debugging tools.
+- Problem recommender system.
 - Support for additional online judges.
-- User-specific customization options.
+- More customization options.
 
 ## Technologies Used:
 
