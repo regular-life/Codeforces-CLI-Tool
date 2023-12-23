@@ -6,10 +6,10 @@ file_named_by_question_ID: true
 
 # default: true
 
-headless_browser: false
+headless_browser: true
 # whether you want to see the browser or not
 
-# if you want to use headless browser, set this to true. this will be faster, but you won't be able to see the browser and what's going on there. tought if there is an issue which only appears on the screen, and not reflected on terminl
+# if you want to use headless browser, set this to true. this will be faster, but you won't be able to see the browser and what's going on there. tough to solve if there is an issue which only appears on the screen, and not reflected on terminal.
 # otherwise, set this as false
 
-# default: false (for testing); set this as true later
+# default: true
