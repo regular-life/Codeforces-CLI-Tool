@@ -46,6 +46,12 @@ if __name__ == "__main__":
     config = read_config()
     print("Current config:\n", config)
     
+    print("Do you want to make changes in the config? (yes/no): ", end="")
+    user_input = input().lower()
+    if not user_input.__contains__("y"):
+        print("No changes made.")
+        exit()
+    
     st_file_naming = config["file_named_by_question_ID"]
     st_browser_visibility = config["headless_browser"]
 
