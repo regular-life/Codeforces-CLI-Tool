@@ -13,11 +13,15 @@ cd "$SCRIPT_DIR"
 
 if [ $option == "--submit" ]; then
     source .env/bin/activate
-    python Main.py
+    python options/Submit.py
     deactivate
 elif [ $option == "--status" ]; then
     source .env/bin/activate
     python utils/getSubmissionStatusDetails.py
+    deactivate
+elif [ $option == "--contests "]; then
+    source .env/bin/activate
+    python options/getContests.py
     deactivate
 elif [ $option == "--my-stats" ]; then
     source .env/bin/activate
