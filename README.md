@@ -1,10 +1,10 @@
 # Codeforces Tool (cftool)
 
-**Overview:**
+## Overview:
 
 The Codeforces Tool (cftool) is a command-line utility designed to streamline various interactions with the Codeforces platform. Whether you want to submit code, check your recent submission status, view upcoming contests, or manage credentials, cftool provides a simple and efficient way to navigate Codeforces functionalities.
 
-**Table of Contents:**
+## Table of Contents:
 
 1. [Installation](#installation)
 2. [Usage](#usage)
@@ -15,25 +15,38 @@ The Codeforces Tool (cftool) is a command-line utility designed to streamline va
 7. [Technologies Used](#technologies-used)
 8. [Acknowledgements](#acknowledgements)
 
-**1. Installation:**
+## Installation:
 
-To install cftool and its dependencies, use the provided installation script:
+  - **Download the Project:**
+    Clone the repository to your local machine using the following command:
+    ```bash
+    git clone https://github.com/regular-life/cftool
+    ```
+    **OR**
+    Download the .zip file from [cftool GitHub Repository](https://github.com/regular-life/cftool).
 
-```bash
-make install
-```
+  - **Navigate to Project Directory:**
+    Open a terminal and navigate to `cftool` directory.
 
-This script not only installs the required packages but also adds the project directory to your PATH for easy access.
+  - **Run Installation Script:**
+    Run the installation script to set up the virtual environment and install dependencies:
+    ```bash
+    make install
+    ```
+  
+  - **Add Project to PATH:**
+    This script also adds the project directory to your PATH for easy access.
+    If there is an issue with this make suitable changes in `install.sh` and do `make install` again.
 
-**2. Usage:**
+## Usage:
 
-Run cftool with various options to perform specific tasks:
+You can run cftool with various options to perform specific tasks:
 
 ```bash
 cftool [--submit | --status | --contests | --my-stats | --my-contests | --credentials | --config | --blogs | --help]
 ```
 
-**3. Options:**
+## Options:
 
 - **--submit:** Run cftool for submitting your code.
 - **--status:** Display the most recent submission status and details.
@@ -45,24 +58,41 @@ cftool [--submit | --status | --contests | --my-stats | --my-contests | --creden
 - **--blogs:** View the most recent blogs from Codeforces.
 - **--help:** Display this help message.
 
-**4. File Structure:**
+## File Structure:
+```
+project-root/
+|-- .env                   # Virtual environment files
+|-- classes/               # Directory containing classes
+|   |-- CF.py
+|-- config/                # Configuration files
+|   |-- config_interpreter.py
+|   |-- config.yml
+|-- options/               # Directory containing scripts for different options
+|   |-- getBlogs.py
+|   |-- getContests.py
+|   |-- getMyContests.py
+|   |-- getMyStats.py
+|   |-- Submit.py
+|-- secrets/               # Directory for storing sensitive information
+|   |-- credentials.json
+|-- utils/                 # Directory containing utility scripts
+|   |-- compilerToCode.py
+|   |-- credentials.py
+|   |-- encrypt.py
+|   |-- getCompiler.py
+|   |-- getQuestionID.py
+|   |-- getSubmissionStatusDetails.py
+|-- cftool                 # Main script (shell script)
+|-- help.txt               # Usage instructions
+|-- install.sh             # Installation script
+|-- Makefile               # Makefile for installation
+```
 
-- **.env:** Virtual environment files.
-- **classes:** CF.py.
-- **config:** config_interpreter.py, config.yml.
-- **options:** getBlogs.py, getContests.py, getMyContests.py, getMyStats.py.
-- **secrets:** credentials.json.
-- **utils:** compilerToCode.py, credentials.py, encrypt.py, getCompiler.py, getQuestionID.py, getSubmissionStatusDetails.py.
-- **cftool:** Main script (shell script).
-- **help.txt:** Usage instructions.
-- **install.sh:** Installation script.
-- **Makefile:** Makefile for installation.
-
-**5. Getting Started:**
+## Getting Started:
 
 Ensure you have the required packages installed and add the project directory to your PATH using the provided installation script. Run cftool with the desired options to interact with Codeforces effortlessly.
 
-**6. Future Targets:**
+## Future Targets:
 
 We are actively working on improving cftool. Future features may include:
 
@@ -71,19 +101,22 @@ We are actively working on improving cftool. Future features may include:
 - Support for additional online judges.
 - User-specific customization options.
 
-**7. Technologies Used:**
+## Technologies Used:
 
 - Python
+- Python VirtualEnv
 - Bash
-- Selenium
-- Makefile
-- Bash
+- Selenium for Web Scraping
 - Requests library
 - Pytz library
-- Git for version control
+- YML for config
+- OOPS applied where possible
 
-**8. Acknowledgements:**
+## Acknowledgements:
 
-Special thanks to the Codeforces platform and the developer community for their continuous support.
+Special thanks to [Sanyam Garg](https://github.com/SanyamGarg12) for suggesting more features that can be added and the ideation of the project.
+I would also like to thank the Codeforces platform and the developer community.
 
 Feel free to contribute, report issues, or suggest new features. Happy coding!
+
+---
