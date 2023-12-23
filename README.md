@@ -73,6 +73,7 @@ project-root/
 |   |-- getContests.py
 |   |-- getMyContests.py
 |   |-- getMyStats.py
+|   |-- getSubmissionStatusDetails.py
 |   |-- Submit.py
 |-- secrets/               # Directory for storing sensitive information
 |   |-- credentials.json
@@ -82,7 +83,6 @@ project-root/
 |   |-- encrypt.py
 |   |-- getCompiler.py
 |   |-- getQuestionID.py
-|   |-- getSubmissionStatusDetails.py
 |-- cftool                 # Main script (shell script)
 |-- help.txt               # Usage instructions
 |-- install.sh             # Installation script
