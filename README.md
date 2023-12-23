@@ -91,6 +91,10 @@ project-root/
 ## Getting Started:
 
 Ensure you have the required packages installed and add the project directory to your PATH using the provided installation script. Run cftool with the desired options to interact with Codeforces effortlessly.
+Please read and make necessary changes in `config/config.yml`.
+You may also need to make changes for where location of direcotry is written (`.zshrc` or `.bashrc` etc).
+Currently `encrypt.py` has not been used. but it will be implemented soon.
+
 
 ## Future Targets:
 
