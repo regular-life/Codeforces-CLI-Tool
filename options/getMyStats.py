@@ -56,8 +56,16 @@ def getProblemsVsRatings(username):
         x = list(problems_vs_ratings.keys())
         y = list(problems_vs_ratings.values())
 
+        min_x = min(x)
+        max_x = max(x)
+        
+        tick_vals = list(range(min_x, max_x + 1, 100))
+        
         fig = px.bar(x=x, y=y, labels={'x': 'Rating', 'y': 'Number of Problems Solved'},
                      title=f'Problems vs Ratings for {username}', text=y)
+        
+        fig.update_layout(xaxis=dict(tickvals=tick_vals, ticktext=tick_vals))
+        
         fig.update_traces(marker_color='rgb(158,202,225)', marker_line_color='rgb(8,48,107)',
                           marker_line_width=1.5, opacity=0.6)
 

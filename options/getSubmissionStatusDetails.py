@@ -2,7 +2,15 @@ import requests
 from datetime import datetime
 import pytz
 import tzlocal
-from credentials import load_credentials
+
+import sys
+import os
+
+script_dir = os.path.dirname(os.path.abspath(__file__))
+project_dir = os.path.join(script_dir, "..")
+sys.path.append(project_dir)
+
+from utils.credentials import load_credentials
 
 def get_user_title(username):
     user_info_url = f"https://codeforces.com/api/user.info?handles={username}"
@@ -88,12 +96,22 @@ def getSubmissionStatusDetails(username):
                 time_taken = result['timeConsumedMillis']
                 memory_taken = result['memoryConsumedBytes']
                 submission_id = result['id']
-                submission_link = f"\033]8;;{f'https://codeforces.com/contest/{problem_contest_id}/submission/{submission_id}'}\033\\{submission_id}\033]8;;\033\\"
+                submission_link = f'https://codeforces.com/contest/{problem_contest_id}/submission/{submission_id}'
                 
                 if (verdict != "TESTING"):
-                    headers = "#            When                    Who          Problem                          Lang       Verdict     Time     Memory"
-                    separator = "-----------------------------------------------------------------------------------------------------------------------"
-                    return f"{headers}\n{separator}\n{submission_link}   {submission_time_str}   {user_color}{username}\033[0m   {problem_contest_id}-{problem_index}:{problem_name}   {language}   {status}   {time_taken}ms   {memory_taken}B"
+                    headers = "#\t\tWhen\t\t\t\tWho\t\tProblem\t\t\t\tLang\t\tVerdict\t\t\tTime\tMemory"
+                    separator = "----------------------------------------------------------------------------------------------------------------------------------------------------------"
+                    submission_template = "{:<10}\t{:<25}\t{:<20}\t{:<30}\t{:<10}\t{:<15}\t{:<8} {:<8}"
+
+                    # Construct submission information
+                    submission_info = submission_template.format(
+                        f"{submission_id}", submission_time_str, f"{user_color}{username}\033[0m",
+                        f"{problem_contest_id}-{problem_index}:{problem_name}", language, status,
+                        f"{time_taken}ms", f"{memory_taken}B"
+                    )
+
+                    # Print headers, separator, and submission information
+                    return(f"{headers}\n{separator}\n{submission_info}\nSubmission Link: {submission_link}")
 
 if __name__ == "__main__":
     try:

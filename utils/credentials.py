@@ -25,4 +25,5 @@ def load_credentials():
 
 if __name__ == '__main__':
     username, password = load_credentials()
-    print(username, password)
+    print("Username: " + username)
+    print("Password: " + password)

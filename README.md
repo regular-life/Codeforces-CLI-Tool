@@ -3,6 +3,7 @@
 ## Overview:
 
 The Codeforces Tool (cftool) is a command-line utility designed to streamline various interactions with the Codeforces platform. Whether you want to submit code, check your recent submission status, view upcoming contests, or manage credentials, cftool provides a simple and efficient way to navigate Codeforces functionalities.
+Please make sure to read the Getting Started section below.
 
 ## Table of Contents:
 
@@ -94,7 +95,7 @@ Ensure you have the required packages installed and add the project directory to
 Please read and make necessary changes in `config/config.yml`.
 You may also need to make changes for where location of direcotry is written (`.zshrc` or `.bashrc` etc).
 Currently `encrypt.py` has not been used. but it will be implemented soon.
-
+This project has been made and tested on Arch Linux. Although, I tried my best to make it work on different OS, though, I am not sure how well it may work on other OS and do not guarantee that it will flawlessly.
 
 ## Future Targets:
 

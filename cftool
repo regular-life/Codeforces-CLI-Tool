@@ -17,7 +17,7 @@ if [ $option == "--submit" ]; then
     deactivate
 elif [ $option == "--status" ]; then
     source .env/bin/activate
-    python utils/getSubmissionStatusDetails.py
+    python options/getSubmissionStatusDetails.py
     deactivate
 elif [ $option == "--contests" ]; then
     source .env/bin/activate

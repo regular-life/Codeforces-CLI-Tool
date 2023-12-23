@@ -12,7 +12,7 @@ sys.path.append(project_dir)
 from utils.credentials import *
 from utils.encrypt import *
 from utils.getQuestionID import *
-from utils.getSubmissionStatusDetails import *
+from options.getSubmissionStatusDetails import *
 from utils.compilerToCode import *
 from config.config_interpreter import *
 

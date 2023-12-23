@@ -1,5 +1,4 @@
 import requests
-
 import sys
 import os
 
@@ -18,13 +17,22 @@ def pastContests(username):
         number_of_contests = len(contests)
         print(f"Total number of contests: {number_of_contests}")
         print("Most Recent Contests:")
-        print("Contest ID\tContest Name\t\t\t\t\tRank\tResulant Rating")
+        print("Contest ID\tContest Name\t\t\t\t\tRank\tResulant Rating\t\tDelta")
         for i in range(number_of_contests-1, number_of_contests-6, -1):
             contest_id = str(contests[i]["contestId"])
             contest_name = contests[i]["contestName"]
             rank = str(contests[i]["rank"])
             new_rating = str(contests[i]["newRating"])
-            print(f"{contest_id}\t\t{contest_name.ljust(40)}\t{rank}\t{new_rating}")
+            old_rating = str(contests[i]["oldRating"])
+            
+            # Calculate the delta (change) in rating
+            delta = int(new_rating) - int(old_rating)
+            if (delta > 0):
+                delta = "+" + str(delta)
+            elif (delta < 0):
+                delta = str(delta)
+            
+            print(f"{contest_id}\t\t{contest_name.ljust(40)}\t{rank}\t{new_rating}\t\t\t{delta}")
     else:
         print("Error")
 

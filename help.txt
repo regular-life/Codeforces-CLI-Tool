@@ -1,4 +1,4 @@
-Usage: cftool [--submit | --status | --my-stats | --my-contest | --credentials | --config | --blogs | --help]
+Usage: cftool [--submit | --status | --my-stats | --my-contests | --credentials | --config | --blogs | --help]
 
 Options:
     --submit        Run cftool for submitting your code.
