@@ -10,3 +10,4 @@ Options:
     --config        View and make changes to the configuration settings for cftool.
     --blogs         View the most recent blogs from Codeforces.
     --help          Display this help message.
+

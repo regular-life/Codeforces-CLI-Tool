@@ -9,7 +9,7 @@ fi
 
 option=$1
 
-cd "$SCRIPT_DIR"
+cd "$SCRIPT_DIR" > /dev/null
 
 if [ $option == "--submit" ]; then
     source .env/bin/activate
@@ -19,7 +19,7 @@ elif [ $option == "--status" ]; then
     source .env/bin/activate
     python utils/getSubmissionStatusDetails.py
     deactivate
-elif [ $option == "--contests "]; then
+elif [ $option == "--contests" ]; then
     source .env/bin/activate
     python options/getContests.py
     deactivate
@@ -50,4 +50,4 @@ else
     exit 1
 fi
 
-cd -
+cd - > /dev/null

@@ -33,9 +33,11 @@ fi
 # Add the current working directory to the PATH environment variable
 # Adjust for different shells
 if [ -n "$BASH_VERSION" ]; then
-    echo 'export PATH=$PATH:'$(pwd) >> ~/.bashrc
-    print_feedback "PATH added to .bashrc"
+    echo '# cftool path. added by install.sh' >> ~/.zshrc
+    echo 'export PATH=$PATH:'$(pwd) >> ~/.zshrc
+    print_feedback "PATH added to .zshrc"
 elif [ -n "$ZSH_VERSION" ]; then
+    echo '# cftool path. added by install.sh' >> ~/.zshrc
     echo 'export PATH=$PATH:'$(pwd) >> ~/.zshrc
     print_feedback "PATH added to .zshrc"
 else
