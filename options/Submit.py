@@ -2,6 +2,13 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 import time
 
+import sys
+import os
+
+script_dir = os.path.dirname(os.path.abspath(__file__))
+project_dir = os.path.join(script_dir, "..")
+sys.path.append(project_dir)
+
 from utils.credentials import *
 from utils.encrypt import *
 from utils.getQuestionID import *
