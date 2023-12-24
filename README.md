@@ -103,7 +103,8 @@ We are actively working on improving cftool. Future features may include:
 
 - Problem recommender system.
 - Support for additional online judges.
-- More customization options.
+- Option for password reset.
+- Encryption-Decryption of username and password.
 
 ## Technologies Used:
 
