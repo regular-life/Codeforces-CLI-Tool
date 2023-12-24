@@ -3,7 +3,7 @@
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 if [ $# -eq 0 ]; then
-    echo "Usage: $0 [--submit | --credentials | --config | --help]"
+    echo "Usage: $0 [--submit | --status | --my-stats | --my-contests | --credentials | --config | --blogs | --help]"
     exit 1
 fi
 
