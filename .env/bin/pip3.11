@@ -1,4 +1,4 @@
-#!/home/yash/Codes/proj1/.env/bin/python
+#!/home/yash/Codes/Codeforces-CLI-Tool/.env/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys
