@@ -30,9 +30,10 @@ Please make sure to read the Getting Started section below.
     Open a terminal and navigate to `cftool` directory.
 
   - **Run Installation Script:**
-    Run the installation script to set up the virtual environment and install dependencies:
+    Run the installation script to do the initial setup and installtion of dependencies:
     ```bash
-    make install
+    make install-venv-setup       # if you wish to use venv (named .env) setup
+    make install                  # if you do not wish to use .env. doing this will delete .env folder (~450 MB)
     ```
   - Open another terminal and start working :) 
 
