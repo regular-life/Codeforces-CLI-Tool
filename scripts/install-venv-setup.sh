@@ -34,7 +34,7 @@ else
 fi
 
 # Add the current working directory to the PATH environment variable
-echo '# cftool path. added by install.sh' >> $YOUR_TERMINAL_RC_FILE
+echo '# cftool path. added by install-venv-setup.sh' >> $YOUR_TERMINAL_RC_FILE
 echo 'export PATH=$PATH:'$(pwd) >> $YOUR_TERMINAL_RC_FILE
 print_feedback "PATH added to $YOUR_TERMINAL_RC_FILE"
 
