@@ -34,7 +34,7 @@ Please make sure to read the Getting Started section below.
     Run the installation script to do the initial setup and installtion of dependencies:
     ```bash
     make install-venv-setup       # if you wish to use venv (named .env) setup
-    make install                  # if you do not wish to use .env. doing this will delete .env folder (~450 MB)
+    make install                  # if you do not wish to use .env. doing this will delete .env folder (~400 MB)
     ```
   - Open another terminal and start working :) 
 
