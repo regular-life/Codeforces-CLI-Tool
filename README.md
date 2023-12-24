@@ -128,8 +128,7 @@ We are actively working on improving cftool. Future features may include:
 
 ## Acknowledgements:
 
-Special thanks to [Sanyam Garg](https://github.com/SanyamGarg12) for suggesting more features that can be added.
-I would also like to thank the Codeforces platform and the developer community.
+I would like to thank the Codeforces platform and the developer community.
 
 Feel free to contribute, report issues, or suggest new features. Happy coding!
 
