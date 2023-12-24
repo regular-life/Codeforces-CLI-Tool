@@ -1,4 +1,4 @@
-# Codeforces Tool (cftool)
+# CF CLI Tool (cftool)
 
 ## Overview:
 
