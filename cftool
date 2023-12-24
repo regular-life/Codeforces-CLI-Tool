@@ -11,38 +11,55 @@ option=$1
 
 cd "$SCRIPT_DIR" > /dev/null
 
+VENV_USE = true
+if [ ! -d ".env" ]; then
+    VENV_USE = false
+fi
+
+activate_venv() {
+    if [ $VENV_USE == true ]; then
+        source .env/bin/activate
+    fi
+}
+
+deactivate_venv() {
+    if [ $VENV_USE == true ]; then
+        deactivate
+    fi
+}
+
 if [ $option == "--submit" ]; then
-    source .env/bin/activate
+    activate_venv
     python options/Submit.py
-    deactivate
+    deactivate_venv
 elif [ $option == "--status" ]; then
-    source .env/bin/activate
+    activate_venv
     python options/getSubmissionStatusDetails.py
-    deactivate
+    deactivate_venv
 elif [ $option == "--contests" ]; then
-    source .env/bin/activate
+    activate_venv
     python options/getContests.py
-    deactivate
+    deactivate_venv
 elif [ $option == "--my-stats" ]; then
-    source .env/bin/activate
+    activate_venv
     python options/getMyStats.py
-    deactivate
+    deactivate_venv
 elif [ $option == "--my-contests" ]; then
-    source .env/bin/activate
+    activate_venv
     python options/getMyContests.py
-    deactivate
+    deactivate_venv
 elif [ $option == "--credentials" ]; then
-    source .env/bin/activate
+    activate_venv
     python utils/credentials.py
-    deactivate
+    deactivate_venv
 elif [ $option == "--config" ]; then
-    source .env/bin/activate
+    activate_venv
     python config/config_interpreter.py
-    deactivate
+    deactivate_venv
 elif [ $option == "--blogs" ]; then
-    source .env/bin/activate
+    activate_venv
     python options/getBlogs.py
-    deactivate
+    deactivate_venv
 elif [ $option == "--help" ]; then
     cat options/help.txt
 else
