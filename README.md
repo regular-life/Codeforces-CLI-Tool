@@ -34,10 +34,7 @@ Please make sure to read the Getting Started section below.
     ```bash
     make install
     ```
-  
-  - **Add Project to PATH:**
-    This script also adds the project directory to your PATH for easy access.
-    If there is an issue with this make suitable changes in `install.sh` and do `make install` again.
+  - Open another terminal and start working :) 
 
 ## Usage:
 
