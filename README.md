@@ -74,8 +74,10 @@ project-root/
 |   |-- getMyStats.py
 |   |-- getSubmissionStatusDetails.py
 |   |-- Submit.py
+|   |-- help.txt           # Usage instructions
 |-- scripts/               # Directory containing .sh scripts related to the project
 |   |-- install.sh
+|   |-- install-venv-setup.sh
 |-- secrets/               # Directory for storing sensitive information
 |   |-- credentials.json
 |-- utils/                 # Directory containing utility scripts
@@ -85,17 +87,23 @@ project-root/
 |   |-- getCompiler.py
 |   |-- getQuestionID.py
 |-- cftool                 # Main script (shell script)
-|-- help.txt               # Usage instructions
+|-- LICENSE                # GNU GPL License
 |-- Makefile               # Makefile for installation
+|-- README.md              # Readme of the project
+|-- requirements.txt       # File containing the names and versions of all the packages involved. (TIP: you can just do "pip install requirements.txt"
 ```
 
 ## Getting Started:
 
-Ensure you have the required packages installed and add the project directory to your PATH using the provided installation script. Run cftool with the desired options to interact with Codeforces effortlessly.
-Please read and make necessary changes in `config/config.yml`.
-Please check and define `YOUR_TERMINAL_RC_FILE` in `scripts/install.sh`
-Currently `encrypt.py` has not been used. but it will be implemented soon.
-This project has been made and tested on Arch Linux. Although, I tried my best to make it work on different OS, though, I am not sure how well it may work on other OS and do not guarantee that it will flawlessly.
+- Ensure that you have the required packages installed and add the project directory to your `PATH` using the provided installation script.
+
+- Please read and make necessary changes in `config/config.yml`. Additionally, check and define `YOUR_TERMINAL_RC_FILE` in `scripts/install.sh`.
+
+- Although `encrypt.py` is currently unused, it will be implemented soon.
+
+- This project has been developed and tested on Arch Linux. While efforts have been made to ensure compatibility with different operating systems, flawless performance on all platforms is not guaranteed.
+
+- Run `cftool` with the desired options to interact with Codeforces effortlessly.
 
 ## Future Targets:
 
@@ -113,9 +121,10 @@ We are actively working on improving cftool. Future features may include:
 - Bash
 - Selenium for Web Scraping
 - Requests library
-- Pytz library
+- Pytz & tzlocal library
 - YML for config
 - OOPS applied where possible
+- CodeForces API
 
 ## Acknowledgements:
 
