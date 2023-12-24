@@ -15,6 +15,7 @@ Please make sure to read the Getting Started section below.
 6. [Future Targets](#future-targets)
 7. [Technologies Used](#technologies-used)
 8. [Acknowledgements](#acknowledgements)
+9. [License](#license)
 
 ## Installation:
 
@@ -121,5 +122,12 @@ Special thanks to [Sanyam Garg](https://github.com/SanyamGarg12) for suggesting 
 I would also like to thank the Codeforces platform and the developer community.
 
 Feel free to contribute, report issues, or suggest new features. Happy coding!
+
+## License:
+This project is licensed under the GNU General Public License v3.0 - see the [LICENSE](LICENSE) file for details.
+
+When distributing this software, you must provide the source code and comply with the terms of the GPL license. If you make modifications to the code, document those changes.
+
+For more details, please refer to the [full text of the GPL license](https://www.gnu.org/licenses/gpl-3.0.html).
 
 ---
