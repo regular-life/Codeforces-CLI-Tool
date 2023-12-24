@@ -11,19 +11,19 @@ option=$1
 
 cd "$SCRIPT_DIR" > /dev/null
 
-VENV_USE = true
+VENV_USE=true
 if [ ! -d ".env" ]; then
-    VENV_USE = false
+    VENV_USE=false
 fi
 
 activate_venv() {
-    if [ $VENV_USE == true ]; then
+    if [ $VENV_USE==true ]; then
         source .env/bin/activate
     fi
 }
 
 deactivate_venv() {
-    if [ $VENV_USE == true ]; then
+    if [ $VENV_USE==true ]; then
         deactivate
     fi
 }
