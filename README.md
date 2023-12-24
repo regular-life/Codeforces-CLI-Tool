@@ -75,6 +75,8 @@ project-root/
 |   |-- getMyStats.py
 |   |-- getSubmissionStatusDetails.py
 |   |-- Submit.py
+|-- scripts/               # Directory containing .sh scripts related to the project
+|   |-- install.sh
 |-- secrets/               # Directory for storing sensitive information
 |   |-- credentials.json
 |-- utils/                 # Directory containing utility scripts
@@ -85,7 +87,6 @@ project-root/
 |   |-- getQuestionID.py
 |-- cftool                 # Main script (shell script)
 |-- help.txt               # Usage instructions
-|-- install.sh             # Installation script
 |-- Makefile               # Makefile for installation
 ```
 
@@ -93,7 +94,7 @@ project-root/
 
 Ensure you have the required packages installed and add the project directory to your PATH using the provided installation script. Run cftool with the desired options to interact with Codeforces effortlessly.
 Please read and make necessary changes in `config/config.yml`.
-You may also need to make changes for where location of direcotry is written (`.zshrc` or `.bashrc` etc).
+Please check and define `YOUR_TERMINAL_RC_FILE` in `scripts/install.sh`
 Currently `encrypt.py` has not been used. but it will be implemented soon.
 This project has been made and tested on Arch Linux. Although, I tried my best to make it work on different OS, though, I am not sure how well it may work on other OS and do not guarantee that it will flawlessly.
 

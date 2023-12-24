@@ -44,7 +44,7 @@ elif [ $option == "--blogs" ]; then
     python options/getBlogs.py
     deactivate
 elif [ $option == "--help" ]; then
-    cat help.txt
+    cat options/help.txt
 else
     echo "Invalid option. Usage: cftool [--submit | --status | --my-stats | --my-contest | --credentials | --config | --blogs | --help]"
     exit 1

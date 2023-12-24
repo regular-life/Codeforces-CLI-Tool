@@ -5,6 +5,9 @@ RED='\033[0;31m'
 GREEN='\033[0;32m'
 NC='\033[0m' # Reset color
 
+# Set the terminal rc file where the path will be added
+YOUR_TERMINAL_RC_FILE=~/.zshrc
+
 # Function to print feedback message
 print_feedback() {
     echo -e "${GREEN}$1 ✔${NC}"
@@ -31,19 +34,9 @@ else
 fi
 
 # Add the current working directory to the PATH environment variable
-# Adjust for different shells
-if [ -n "$BASH_VERSION" ]; then
-    echo '# cftool path. added by install.sh' >> ~/.bashrc
-    echo 'export PATH=$PATH:'$(pwd) >> ~/.bashrc
-    print_feedback "PATH added to .bashrc"
-elif [ -n "$ZSH_VERSION" ]; then
-    echo '# cftool path. added by install.sh' >> ~/.zshrc
-    echo 'export PATH=$PATH:'$(pwd) >> ~/.zshrc
-    print_feedback "PATH added to .zshrc"
-else
-    echo "Unsupported shell. Please add the following line to your shell configuration file manually:"
-    echo "export PATH=\$PATH:$(pwd)"
-fi
+echo '# cftool path. added by install.sh' >> $YOUR_TERMINAL_RC_FILE
+echo 'export PATH=$PATH:'$(pwd) >> $YOUR_TERMINAL_RC_FILE
+print_feedback "PATH added to $YOUR_TERMINAL_RC_FILE"
 
 # Give execute permission to the cftool script
-chmod +x cftool
+chmod +x cftool && print_feedback "cftool script made executable" || echo -e "${RED}WARNING: cftool script could not be made executable. You need to give execute permission to the cftool script manually.${NC}"
