@@ -27,7 +27,13 @@ fi
 
 # Install requirements.txt
 pip install -r requirements.txt
-print_feedback "requirements.txt installed"
+# if successful, print feedback message
+# check success
+if [ $? -eq 0 ]; then
+    print_feedback "requirements.txt installed"
+else
+    echo -e "${RED}WARNING: requirements.txt could not be installed. You need to install the requirements manually.${NC}"
+fi
 
 # Add the current working directory to the PATH environment variable
 echo '# cftool path. added by install.sh' >> $YOUR_TERMINAL_RC_FILE
