@@ -6,7 +6,7 @@ GREEN='\033[0;32m'
 NC='\033[0m' # Reset color
 
 # Set the terminal rc file where the path will be added
-YOUR_TERMINAL_RC_FILE=~/.zshrc
+YOUR_TERMINAL_RC_FILE=~/.bashrc
 
 # Function to print feedback message
 print_feedback() {
