@@ -33,8 +33,8 @@ Please make sure to read the Getting Started section below.
   - **Run Installation Script:**
     Run the installation script to do the initial setup and installtion of dependencies:
     ```bash
-    make install-venv-setup       # if you wish to use venv (named .env) setup
-    make install                  # if you do not wish to use .env. doing this will delete .env folder (~400 MB)
+    make install-venv-setup       # if you wish to use virtualenv (will be named .env) setup
+    make install                  # if you do not wish to use virtualenv
     ```
   - Open another terminal and start working :) 
 
@@ -61,9 +61,9 @@ cftool [--submit | --status | --contests | --my-stats | --my-contests | --creden
 ## File Structure:
 ```
 project-root/
-|-- .env                   # Virtual environment files
+|-- .env                   # Virtual environment files (if you opt to use virtualenv)
 |-- classes/               # Directory containing classes
-|   |-- CF.py
+|   |-- CF_Submit.py
 |-- config/                # Configuration files
 |   |-- config_interpreter.py
 |   |-- config.yml
@@ -97,9 +97,9 @@ project-root/
 
 - Ensure that you have the required packages installed and add the project directory to your `PATH` using the provided installation script.
 
-- Please read and make necessary changes in `config/config.yml`. Additionally, check and define `YOUR_TERMINAL_RC_FILE` in `scripts/install.sh`.
+- Please read and make necessary changes in `config/config.yml`. Additionally, check and define `YOUR_TERMINAL_RC_FILE` in `scripts/install.sh` and `scripts/install-venv-setup.sh`.
 
-- Although `encrypt.py` is currently unused, it will be implemented soon.
+- Although `encrypt.py` is currently unused, it will be implemented soon. Or maybe some other encryption format (I need to search for something like this).
 
 - This project has been developed and tested on Arch Linux. While efforts have been made to ensure compatibility with different operating systems, flawless performance on all platforms is not guaranteed.
 

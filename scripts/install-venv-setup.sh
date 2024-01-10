@@ -33,6 +33,11 @@ else
     exit
 fi
 
+# Make virtualenv named .env and install modules from requirements.txt
+virtualenv .env && print_feedback "virtualenv created"
+source .env/bin/activate && print_feedback "virtualenv activated"
+pip install -r requirements.txt && print_feedback "requirements installed"
+
 # Add the current working directory to the PATH environment variable
 echo '# cftool path. added by install-venv-setup.sh' >> $YOUR_TERMINAL_RC_FILE
 echo 'export PATH=$PATH:'$(pwd) >> $YOUR_TERMINAL_RC_FILE

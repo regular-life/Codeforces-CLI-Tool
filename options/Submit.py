@@ -33,7 +33,7 @@ from options.getSubmissionStatusDetails import *
 from utils.compilerToCode import *
 from config.config_interpreter import *
 
-from classes.CF import *
+from classes.CF_Submit import *
 
 if __name__ == "__main__":
     
@@ -49,7 +49,7 @@ if __name__ == "__main__":
         driver = webdriver.Chrome()
     
     # create object
-    cf = CF(driver)
+    cf = CF_Submit(driver)
     
     # get file to submit
     filepath = input("Enter the file path: ")
