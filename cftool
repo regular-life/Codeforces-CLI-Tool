@@ -17,48 +17,48 @@ if [ ! -d ".env" ]; then
 fi
 
 activate_venv() {
-    if [ $VENV_USE==true ]; then
+    if [ "$VENV_USE" = true ]; then
         source .env/bin/activate
     fi
 }
 
 deactivate_venv() {
-    if [ $VENV_USE==true ]; then
+    if [ "$VENV_USE" = true ]; then
         deactivate
     fi
 }
 
 if [ $option == "--submit" ]; then
     activate_venv
-    python options/Submit.py
+    python3 options/Submit.py
     deactivate_venv
 elif [ $option == "--status" ]; then
     activate_venv
-    python options/getSubmissionStatusDetails.py
+    python3 options/getSubmissionStatusDetails.py
     deactivate_venv
 elif [ $option == "--contests" ]; then
     activate_venv
-    python options/getContests.py
+    python3 options/getContests.py
     deactivate_venv
 elif [ $option == "--my-stats" ]; then
     activate_venv
-    python options/getMyStats.py
+    python3 options/getMyStats.py
     deactivate_venv
 elif [ $option == "--my-contests" ]; then
     activate_venv
-    python options/getMyContests.py
+    python3 options/getMyContests.py
     deactivate_venv
 elif [ $option == "--credentials" ]; then
     activate_venv
-    python utils/credentials.py
+    python3 utils/credentials.py
     deactivate_venv
 elif [ $option == "--config" ]; then
     activate_venv
-    python config/config_interpreter.py
+    python3 config/config_interpreter.py
     deactivate_venv
 elif [ $option == "--blogs" ]; then
     activate_venv
-    python options/getBlogs.py
+    python3 options/getBlogs.py
     deactivate_venv
 elif [ $option == "--help" ]; then
     cat options/help.txt

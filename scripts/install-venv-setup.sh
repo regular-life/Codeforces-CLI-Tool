@@ -13,13 +13,13 @@ print_feedback() {
     echo -e "${GREEN}$1 ✔${NC}"
 }
 
-# Check if Python is installed
-if command -v python &> /dev/null
+# Check if Python3 is installed
+if command -v python3 &> /dev/null
 then
-    print_feedback "Python found"
+    print_feedback "Python3 found"
 else
     # Display warning message in red
-    echo -e "${RED}WARNING: Python could not be found. You need to download and install python first before being able to use this tool.${NC}"
+    echo -e "${RED}WARNING: Python3 could not be found. You need to download and install python3 first before being able to use this tool.${NC}"
     exit
 fi
 
@@ -29,7 +29,7 @@ then
     print_feedback "virtualenv found"
 else
     # Display warning message in red
-    echo -e "${RED}WARNING: Python virtualenv could not be found. You need to download and install virtualenv first before being able to use this tool.${NC}"
+    echo -e "${RED}WARNING: Python3 virtualenv could not be found. You need to download and install virtualenv first before being able to use this tool.${NC}"
     exit
 fi
 

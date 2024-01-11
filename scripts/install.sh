@@ -13,13 +13,13 @@ print_feedback() {
     echo -e "${GREEN}$1 ✔${NC}"
 }
 
-# Check if Python is installed
-if command -v python &> /dev/null
+# Check if python3 is installed
+if command -v python3 &> /dev/null
 then
-    print_feedback "Python found"
+    print_feedback "python3 found"
 else
     # Display warning message in red
-    echo -e "${RED}WARNING: Python could not be found. You need to download and install python first before being able to use this tool.${NC}"
+    echo -e "${RED}WARNING: python3 could not be found. You need to download and install python3 first before being able to use this tool.${NC}"
     exit
 fi
 
