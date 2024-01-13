@@ -22,7 +22,7 @@ Please make sure to read the Getting Started section below.
   - **Download the Project:**
     Clone the repository to your local machine using the following command:
     ```bash
-    git clone https://github.com/regular-life/cftool
+    git clone https://github.com/regular-life/Codeforces-CLI-Tool
     ```
     **OR**
     Download the .zip file from [cftool GitHub Repository](https://github.com/regular-life/Codeforces-CLI-Tool).
