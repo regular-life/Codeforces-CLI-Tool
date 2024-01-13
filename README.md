@@ -25,10 +25,10 @@ Please make sure to read the Getting Started section below.
     git clone https://github.com/regular-life/cftool
     ```
     **OR**
-    Download the .zip file from [cftool GitHub Repository](https://github.com/regular-life/cftool).
+    Download the .zip file from [cftool GitHub Repository](https://github.com/regular-life/Codeforces-CLI-Tool).
 
   - **Navigate to Project Directory:**
-    Open a terminal and navigate to `cftool` directory.
+    Open a terminal and navigate to `Codeforces-CLI-Tool` directory.
 
   - **Run Installation Script:**
     Run the installation script to do the initial setup and installtion of dependencies:
@@ -113,6 +113,7 @@ We are actively working on improving cftool. Future features may include:
 - Support for additional online judges.
 - Option for password reset.
 - Encryption-Decryption of username and password.
+- Password reset option.
 
 ## Technologies Used:
 
