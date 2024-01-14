@@ -34,36 +34,36 @@ if [ $option == "--submit" ]; then
     deactivate_venv
 elif [ $option == "--status" ]; then
     activate_venv
-    python3 options/getSubmissionStatusDetails.py
+    python3 options/GetSubmissionStatusDetails.py
     deactivate_venv
 elif [ $option == "--contests" ]; then
     activate_venv
-    python3 options/getContests.py
+    python3 options/GetContests.py
     deactivate_venv
 elif [ $option == "--my-stats" ]; then
     activate_venv
-    python3 options/getMyStats.py
+    python3 options/GetMyStats.py
     deactivate_venv
 elif [ $option == "--my-contests" ]; then
     activate_venv
-    python3 options/getMyContests.py
+    python3 options/GetMyContests.py
     deactivate_venv
 elif [ $option == "--credentials" ]; then
     activate_venv
-    python3 utils/credentials.py
+    python3 utils/Credentials.py
     deactivate_venv
 elif [ $option == "--config" ]; then
     activate_venv
-    python3 config/config_interpreter.py
+    python3 config/ConfigInterpreter.py
     deactivate_venv
 elif [ $option == "--blogs" ]; then
     activate_venv
-    python3 options/getBlogs.py
+    python3 options/GetBlogs.py
     deactivate_venv
 elif [ $option == "--help" ]; then
     cat options/help.txt
 else
-    echo "Invalid option. Usage: cftool [--submit | --status | --my-stats | --my-contest | --credentials | --config | --blogs | --help]"
+    echo "Invalid option. Usage: cftool [--submit | --status | --my-stats | --my-contests | --credentials | --config | --blogs | --help]"
     exit 1
 fi
 

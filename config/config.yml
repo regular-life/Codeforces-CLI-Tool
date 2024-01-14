@@ -13,3 +13,11 @@ headless_browser: true
 # otherwise, set this as false
 
 # default: true
+
+alarm_for_next_contest_on_boot: true
+# whether you want to be alarmed for the next contest on boot
+
+# if you want to be alarmed for the next contest on boot, set this to true. this will be useful if you want to be alarmed for the next contest on boot, but you don't want to be alarmed for the next contest on boot.
+# otherwise, set this as false
+
+# default: true

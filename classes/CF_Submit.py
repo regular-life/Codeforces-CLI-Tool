@@ -21,10 +21,10 @@ from selenium.webdriver.support.ui import Select
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-from utils.credentials import *
-from utils.encrypt import *
-from utils.getQuestionID import *
-from utils.compilerToCode import *
+from utils.Credentials import *
+from utils.Encrypt import *
+from utils.GetQuestionID import *
+from utils.CompilerToCode import *
 
 
 class CF_Submit:

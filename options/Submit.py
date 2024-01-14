@@ -26,12 +26,12 @@ script_dir = os.path.dirname(os.path.abspath(__file__))
 project_dir = os.path.join(script_dir, "..")
 sys.path.append(project_dir)
 
-from utils.credentials import *
-from utils.encrypt import *
-from utils.getQuestionID import *
-from options.getSubmissionStatusDetails import *
-from utils.compilerToCode import *
-from config.config_interpreter import *
+from utils.Credentials import *
+from utils.Encrypt import *
+from utils.GetQuestionID import *
+from options.GetSubmissionStatusDetails import *
+from utils.CompilerToCode import *
+from config.ConfigInterpreter import *
 
 from classes.CF_Submit import *
 

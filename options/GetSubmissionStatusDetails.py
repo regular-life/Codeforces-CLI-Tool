@@ -27,7 +27,7 @@ script_dir = os.path.dirname(os.path.abspath(__file__))
 project_dir = os.path.join(script_dir, "..")
 sys.path.append(project_dir)
 
-from utils.credentials import load_credentials
+from utils.Credentials import load_credentials
 
 def get_user_title(username):
     user_info_url = f"https://codeforces.com/api/user.info?handles={username}"

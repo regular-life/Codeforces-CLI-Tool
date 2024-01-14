@@ -51,10 +51,11 @@ def read_config():
         return read_config()
 
 # Update the config
-def update_config(st_file_naming, st_browser_visibility):
+def update_config(st_file_naming, st_browser_visibility, st_alarm_for_next_contest_on_boot):
     config = read_config()
     config["file_named_by_question_ID"] = st_file_naming
     config["headless_browser"] = st_browser_visibility
+    config["alarm_for_next_contest_on_boot"] = st_alarm_for_next_contest_on_boot
     with open(CONFIG_FILE_PATH, 'w') as file:
         ruamel.yaml.YAML().dump(config, file)
 
@@ -71,35 +72,51 @@ if __name__ == "__main__":
     
     st_file_naming = config["file_named_by_question_ID"]
     st_browser_visibility = config["headless_browser"]
+    st_alarm_for_next_contest_on_boot = config["alarm_for_next_contest_on_boot"]
 
     # Prompt the user to update the config
     user_input = input("Do you want to use the question ID as the file name? (yes/no): ").lower()
     if user_input.__contains__("y"):
         if not st_file_naming:
-            update_config(True, st_browser_visibility)
+            update_config(True, st_browser_visibility, st_alarm_for_next_contest_on_boot)
             print("Config updated.")
         else:
             print("Config already set to true.")
     else:
         if st_file_naming:
-            update_config(False, st_browser_visibility)
+            update_config(False, st_browser_visibility, st_alarm_for_next_contest_on_boot)
             print("Config updated.")
         else:
             print("Config already set to false.")
         
     st_file_naming = config["file_named_by_question_ID"]
-    st_browser_visibility = config["headless_browser"]
         
     user_input = input("Do you want to the browser to be visible? (yes/no): ").lower()
     if user_input.__contains__("y"):
         if not st_browser_visibility:
-            update_config(st_file_naming, True)
+            update_config(st_file_naming, True, st_alarm_for_next_contest_on_boot)
             print("Config updated.")
         else:
             print("Config already set to true.")
     else:
         if st_browser_visibility:
-            update_config(st_file_naming, False)
+            update_config(st_file_naming, False, st_alarm_for_next_contest_on_boot)
+            print("Config updated.")
+        else:
+            print("Config already set to false.")
+            
+    st_browser_visibility = config["headless_browser"]
+    
+    user_input = input("Do you want the alarm for next contest on boot? (yes/no): ").lower()
+    if user_input.__contains__("y"):
+        if not st_alarm_for_next_contest_on_boot:
+            update_config(st_file_naming, st_browser_visibility, True)
+            print("Config updated.")
+        else:
+            print("Config already set to true.")
+    else:
+        if st_alarm_for_next_contest_on_boot:
+            update_config(st_file_naming, st_browser_visibility, False)
             print("Config updated.")
         else:
             print("Config already set to false.")

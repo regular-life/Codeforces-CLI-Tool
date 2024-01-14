@@ -23,7 +23,7 @@ script_dir = os.path.dirname(os.path.abspath(__file__))
 project_dir = os.path.join(script_dir, "..")
 sys.path.append(project_dir)
 
-from utils.credentials import *
+from utils.Credentials import *
 
 def pastContests(username):
     url = "https://codeforces.com/api/user.rating?handle=" + username
