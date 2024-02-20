@@ -118,14 +118,12 @@ We are actively working on improving cftool. Future features may include:
 ## Technologies Used:
 
 - Python
-- Python VirtualEnv
 - Bash
 - Selenium for Web Scraping
-- Requests library
-- Pytz & tzlocal library
+- Requests library for CodeForces API
 - YML for config
 - OOPS applied where possible
-- CodeForces API
+- Pytz & tzlocal library
 
 ## Acknowledgements:
 
