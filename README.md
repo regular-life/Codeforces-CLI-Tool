@@ -120,10 +120,8 @@ We are actively working on improving cftool. Future features may include:
 - Python
 - Bash
 - Selenium for Web Scraping
-- Requests library for CodeForces API
-- YML for config
-- OOPS applied where possible
-- Pytz & tzlocal library
+- HTTPS Requests to CodeForces API
+- YAML for config
 
 ## Acknowledgements:
 
