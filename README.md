@@ -43,7 +43,7 @@ Please make sure to read the Getting Started section below.
 You can run cftool with various options to perform specific tasks:
 
 ```bash
-cftool [--submit | --status | --contests | --my-stats | --my-contests | --credentials | --config | --blogs | --help]
+cftool [--'option']
 ```
 
 ## Options:
